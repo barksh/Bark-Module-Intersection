@@ -16,7 +16,7 @@ const ResourceSchema: Schema<IResourceModel> = new Schema(
         payload: {
             type: Schema.Types.Mixed,
             required: true,
-        }
+        },
     },
     {
         timestamps: {
