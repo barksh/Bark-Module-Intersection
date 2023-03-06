@@ -1000,6 +1000,28 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@barksh/authentication-types@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@barksh/authentication-types/-/authentication-types-1.0.0.tgz#006b61f4dc1291292c61bd47d5626a4724e3af0a"
+  integrity sha512-bM0wZOM6QwRsFUvo95aPDbfpcxA1cd0On1tB9Y66n9Gz25pIR5LOQsHh5XjKxCTfR5rXnqL7DX1yrK7zZUXS4w==
+
+"@barksh/client-authentication-node@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@barksh/client-authentication-node/-/client-authentication-node-1.0.0.tgz#a11f6cabf363e52099ca61f93d73e9678f9ead0f"
+  integrity sha512-pHqwkoRX/YohyALcMiUNQdcDBnCW8w46YWBeMnlb7TS31DDchCU2mqzmPP79Qyo4axmYp/CLkBfD4X5YYKSp0g==
+  dependencies:
+    "@sudoo/magic" "^1.9.0"
+    axios "^1.3.4"
+    connor "^2.8.0"
+
+"@barksh/token-node@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@barksh/token-node/-/token-node-1.0.0.tgz#77837b9922245dd97043a54bb971e6511b71c76b"
+  integrity sha512-M42Y7OMkmduJ70lHHrOeB+ckUZdt5lwcPG1xAn1Og247GTGu64dHDzQo5JjRhC+vt3Se3JCgyjE1UPHKVCJdrg==
+  dependencies:
+    "@sudoo/jwt" "^3.1.0"
+    connor "^2.8.0"
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -1516,7 +1538,7 @@
   resolved "https://registry.yarnpkg.com/@sudoo/jwt-config/-/jwt-config-1.3.0.tgz#62c7507a5f78f6148ca255ea86036c330a11ab39"
   integrity sha512-BqP0E0my8dsgMxNfC4BvZ2BLBqFoB2FLusxkUUmuJSqqbOrINNcIzTZkNHj7Ht5+3/pVPKpDPniLbqK2u9v7nw==
 
-"@sudoo/jwt@^3.5.0":
+"@sudoo/jwt@^3.1.0", "@sudoo/jwt@^3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@sudoo/jwt/-/jwt-3.5.0.tgz#08a64b08eb92c59bd1ef5405507dcb42f39c6ca2"
   integrity sha512-ac1vEHFS63A1XHJyO9CO58Zt9PGF5wMhw7fKPjJmx9YjHpWIzL6paIkQhsCOakztnryePCstqeAwcx55NJzVyQ==
@@ -1568,6 +1590,11 @@
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@sudoo/pattern/-/pattern-1.10.0.tgz#50df7e10a1dc5b8f259461eba32e7ff13243b070"
   integrity sha512-XTkI4j3F6OmJo5LQcOsSjIowmdbETm2H0GikM683rt46I4Lau6t6T7iicwqwmEY6Wr/4xNqqhIZJ2QL+92XgBg==
+
+"@sudoo/token@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/token/-/token-1.6.1.tgz#f05004a3f31fa8787c7780c066fd90f8513cddc5"
+  integrity sha512-sI2L8yJbzRyMw12RMyBFNfee9lKDLAsp2/KLYRlGWjRHWdJMq4nTYiZrLaTUyRsMCRJWtfGQMU4yCeU9xPQTFw==
 
 "@sudoo/triforce-mongoose-dev@^1.6.0":
   version "1.6.0"
@@ -2167,6 +2194,15 @@ axios@^0.21.1:
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
   dependencies:
     follow-redirects "^1.14.0"
+
+axios@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.4.tgz#f5760cefd9cfb51fd2481acf88c05f67c4523024"
+  integrity sha512-toYm+Bsyl6VC5wSkfkbbNB6ROv7KY93PEBBL6xyDczaIHasAiv4wPqQ/c4RjoQzipxRD2W5g21cOqQulZ7rHwQ==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -3527,7 +3563,7 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-follow-redirects@^1.14.0:
+follow-redirects@^1.14.0, follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
@@ -5472,6 +5508,11 @@ prop-types@^15.8.1:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
 pump@^3.0.0:
   version "3.0.0"
