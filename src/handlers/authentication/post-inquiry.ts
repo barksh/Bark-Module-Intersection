@@ -4,9 +4,12 @@
  * @description Inquiry
  */
 
+import { InquiryAction, InquiryActionType } from "@barksh/authentication-types";
+import { requestBarkInquiryV1, RequestBarkInquiryV1Response } from "@barksh/client-authentication-node";
 import { LambdaVerifier, VerifiedAPIGatewayProxyEvent } from "@sudoo/lambda-verify";
 import { createStrictMapPattern, createStringPattern } from "@sudoo/pattern";
 import { APIGatewayProxyHandler, APIGatewayProxyResult, Context } from "aws-lambda";
+import { Initializer } from "../../initialize/initializer";
 import { createSucceedLambdaResponse } from "../common/response";
 import { wrapHandler } from "../common/setup";
 
@@ -34,9 +37,25 @@ export const authenticationPostInquiryHandler: APIGatewayProxyHandler = wrapHand
 
         const body: Body = event.verifiedBody;
 
-        console.log(body);
+        const actions: Array<InquiryAction<InquiryActionType>> = [];
+
+        if (typeof body.callbackUrl === 'string') {
+            actions.push({
+                type: InquiryActionType.CALLBACK,
+                payload: body.callbackUrl,
+            });
+        }
+
+        const inquiryResponse: RequestBarkInquiryV1Response =
+            await requestBarkInquiryV1(body.domain, {
+                domain: Initializer.getInstance().getSelfDomain(),
+                actions,
+            });
 
         return createSucceedLambdaResponse({
+            exposureKey: inquiryResponse.exposureKey,
+            hiddenKey: inquiryResponse.hiddenKey,
+            redirectUrl: inquiryResponse.redirectUrl,
         });
     },
 );

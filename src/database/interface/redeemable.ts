@@ -27,6 +27,7 @@ export type RedeemableObject<T extends RedeemableObjectType> = {
 export enum RedeemableLimitationType {
 
     RECEIVER = "RECEIVER",
+    REDEEM_COUNT_LIMIT = "REDEEM_COUNT_LIMIT",
 }
 
 export type RedeemableLimitationTypePayloadMap = {
@@ -34,6 +35,9 @@ export type RedeemableLimitationTypePayloadMap = {
     [RedeemableLimitationType.RECEIVER]: {
         readonly accountIdentifier?: string;
         readonly domain: string;
+    };
+    [RedeemableLimitationType.REDEEM_COUNT_LIMIT]: {
+        readonly limit: number;
     };
 };
 

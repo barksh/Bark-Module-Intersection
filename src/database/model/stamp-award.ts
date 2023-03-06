@@ -38,4 +38,4 @@ const StampAwardSchema: Schema<IStampAwardModel> = new Schema(
 export interface IStampAwardModel extends IStampAward<StampAwardSourceType>, Document {
 }
 
-export const AwardModel: Model<IStampAwardModel> = model<IStampAwardModel>('StampAward', StampAwardSchema);
+export const StampAwardModel: Model<IStampAwardModel> = model<IStampAwardModel>('StampAward', StampAwardSchema);
