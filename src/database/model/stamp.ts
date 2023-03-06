@@ -14,7 +14,7 @@ const StampSchema: Schema<IStampModel> = new Schema(
             required: true,
             default: true,
         },
-        stampName: {
+        stampNameDisplay: {
             type: String,
             required: true,
         },

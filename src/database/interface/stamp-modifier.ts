@@ -14,6 +14,8 @@ export enum StampModifierPropertyValueType {
 export type StampModifierPropertyType = {
 
     readonly key: string;
+
+    readonly keyDisplay: string;
     readonly valueType: StampModifierPropertyValueType;
 };
 
@@ -21,6 +23,7 @@ export interface IStampModifierConfig {
 
     readonly stampId: ObjectId;
 
+    readonly modifierNameDisplay: string;
     readonly propertyTypes: StampModifierPropertyType[];
 }
 

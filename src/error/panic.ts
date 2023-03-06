@@ -8,6 +8,6 @@ import { Panic } from "connor";
 import { ERROR_CODE } from "./code";
 import { ERROR_LIST } from "./list";
 
-const MODULE_NAME = 'Bark-Module-Authorization';
+const MODULE_NAME = 'Bark-Module-Intersection';
 
 export const panic: Panic<ERROR_CODE> = Panic.withDictionary(MODULE_NAME, ERROR_LIST);

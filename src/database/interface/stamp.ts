@@ -8,7 +8,7 @@ import { ObjectId } from "mongodb";
 
 export interface IStampConfig {
 
-    readonly stampName: string;
+    readonly stampNameDisplay: string;
 
     readonly resourceId: ObjectId;
 }

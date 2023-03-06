@@ -7,7 +7,7 @@
 import { Document, model, Model, Schema } from "mongoose";
 import { IStampAward, StampAwardSourceType } from "../interface/stamp-award";
 
-const AwardSchema: Schema<IStampAwardModel> = new Schema(
+const StampAwardSchema: Schema<IStampAwardModel> = new Schema(
     {
         active: {
             type: Boolean,
@@ -38,4 +38,4 @@ const AwardSchema: Schema<IStampAwardModel> = new Schema(
 export interface IStampAwardModel extends IStampAward<StampAwardSourceType>, Document {
 }
 
-export const AwardModel: Model<IStampAwardModel> = model<IStampAwardModel>('Award', AwardSchema);
+export const AwardModel: Model<IStampAwardModel> = model<IStampAwardModel>('StampAward', StampAwardSchema);
