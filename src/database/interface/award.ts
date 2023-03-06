@@ -6,15 +6,30 @@
 
 import { ObjectId } from "mongodb";
 
-export interface IAwardConfig {
+export enum AwardSourceType {
+
+    REDEEMABLE = "REDEEMABLE",
+}
+
+export type AwardSourceTypePayloadMap = {
+
+    [AwardSourceType.REDEEMABLE]: {
+        readonly redeemableId: ObjectId;
+    };
+};
+
+export interface IAwardConfig<T extends AwardSourceType> {
 
     readonly accountId: ObjectId;
     readonly stampId: ObjectId;
 
+    readonly sourceType: T;
+    readonly sourcePayload: AwardSourceTypePayloadMap[T];
+
     readonly awardedAt: Date;
 }
 
-export interface IAward extends IAwardConfig {
+export interface IAward<T extends AwardSourceType> extends IAwardConfig<T> {
 
     active: boolean;
 

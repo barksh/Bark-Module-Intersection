@@ -5,7 +5,7 @@
  */
 
 import { Document, model, Model, Schema } from "mongoose";
-import { IAward } from "../interface/award";
+import { AwardSourceType, IAward } from "../interface/award";
 
 const AwardSchema: Schema<IAwardModel> = new Schema(
     {
@@ -35,7 +35,7 @@ const AwardSchema: Schema<IAwardModel> = new Schema(
     },
 );
 
-export interface IAwardModel extends IAward, Document {
+export interface IAwardModel extends IAward<AwardSourceType>, Document {
 }
 
 export const AwardModel: Model<IAwardModel> = model<IAwardModel>('Award', AwardSchema);
