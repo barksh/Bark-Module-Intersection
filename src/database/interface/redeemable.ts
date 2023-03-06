@@ -52,6 +52,7 @@ export interface IRedeemableConfig {
 export interface IRedeemable extends IRedeemableConfig {
 
     active: boolean;
+    redeemCount: number;
 
     readonly createdAt: Date;
     readonly updatedAt: Date;

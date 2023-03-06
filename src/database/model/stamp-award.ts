@@ -1,13 +1,13 @@
 /**
  * @author WMXPY
  * @namespace Database_Model
- * @description Award
+ * @description Stamp Award
  */
 
 import { Document, model, Model, Schema } from "mongoose";
-import { AwardSourceType, IAward } from "../interface/award";
+import { IStampAward, StampAwardSourceType } from "../interface/stamp-award";
 
-const AwardSchema: Schema<IAwardModel> = new Schema(
+const AwardSchema: Schema<IStampAwardModel> = new Schema(
     {
         active: {
             type: Boolean,
@@ -35,7 +35,7 @@ const AwardSchema: Schema<IAwardModel> = new Schema(
     },
 );
 
-export interface IAwardModel extends IAward<AwardSourceType>, Document {
+export interface IStampAwardModel extends IStampAward<StampAwardSourceType>, Document {
 }
 
-export const AwardModel: Model<IAwardModel> = model<IAwardModel>('Award', AwardSchema);
+export const AwardModel: Model<IStampAwardModel> = model<IStampAwardModel>('Award', AwardSchema);

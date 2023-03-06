@@ -1,35 +1,35 @@
 /**
  * @author WMXPY
  * @namespace Database_Interface
- * @description Award
+ * @description Stamp Award
  */
 
 import { ObjectId } from "mongodb";
 
-export enum AwardSourceType {
+export enum StampAwardSourceType {
 
     REDEEMABLE = "REDEEMABLE",
 }
 
-export type AwardSourceTypePayloadMap = {
+export type StampAwardSourceTypePayloadMap = {
 
-    [AwardSourceType.REDEEMABLE]: {
+    [StampAwardSourceType.REDEEMABLE]: {
         readonly redeemableId: ObjectId;
     };
 };
 
-export interface IAwardConfig<T extends AwardSourceType> {
+export interface IStampAwardConfig<T extends StampAwardSourceType> {
 
     readonly accountId: ObjectId;
     readonly stampId: ObjectId;
 
     readonly sourceType: T;
-    readonly sourcePayload: AwardSourceTypePayloadMap[T];
+    readonly sourcePayload: StampAwardSourceTypePayloadMap[T];
 
     readonly awardedAt: Date;
 }
 
-export interface IAward<T extends AwardSourceType> extends IAwardConfig<T> {
+export interface IStampAward<T extends StampAwardSourceType> extends IStampAwardConfig<T> {
 
     active: boolean;
 

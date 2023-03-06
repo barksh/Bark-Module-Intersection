@@ -5,7 +5,19 @@
  */
 
 import { Document, model, Model, Schema } from "mongoose";
-import { IRedeemable, RedeemableLimitation, RedeemableLimitationType } from "../interface/redeemable";
+import { IRedeemable, RedeemableLimitation, RedeemableLimitationType, RedeemableObject, RedeemableObjectType } from "../interface/redeemable";
+
+export const RedeemableObjectSchema: Schema<RedeemableObject<RedeemableObjectType>> = new Schema({
+
+    type: {
+        type: String,
+        required: true,
+    },
+    payload: {
+        type: Schema.Types.Mixed,
+        required: false,
+    },
+}, { _id: false });
 
 export const RedeemableLimitationSchema: Schema<RedeemableLimitation<RedeemableLimitationType>> = new Schema({
 
@@ -25,6 +37,16 @@ const RedeemableSchema: Schema<IRedeemableModel> = new Schema(
             type: Boolean,
             required: true,
             default: true,
+        },
+        redeemCount: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+        objects: {
+            type: [RedeemableObjectSchema],
+            required: true,
+            default: [],
         },
         limitations: {
             type: [RedeemableLimitationSchema],
